@@ -1,0 +1,29 @@
+#home{
+    margin: 100px;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    border-style: dashed;
+    padding: 50px;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 10px;
+    max-width: 100%;
+    overflow-x: scroll;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+h1{
+    padding: 1rem;
+}
+
+th,
+td{
+    padding: 1rem;
+}
+

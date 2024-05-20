@@ -1,0 +1,13 @@
+#form{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    background-color: #F8F9FA;
+    margin-top: -100px;
+}
+
+#submit{
+    margin: 20px
+}
