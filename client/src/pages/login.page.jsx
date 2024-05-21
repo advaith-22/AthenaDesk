@@ -12,7 +12,7 @@ function Login () {
     var [password, setPassword] = useState()
     function handleSubmit (e) {
         e.preventDefault()
-        fetch("https://athena-desk.vercel.app/login", {
+        fetch("https://cors-anywhere.herokuapp.com/https://athena-desk.vercel.app/login", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
