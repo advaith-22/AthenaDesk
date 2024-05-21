@@ -10,7 +10,7 @@ function Register () {
     const navigate = useNavigate()
 
     function handleSubmit () {
-        fetch("http://localhost:2248/register/", {
+        fetch("https://athena-desk.vercel.app/register/", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ function Register () {
 
     function checkIfRegister (e) {
         e.preventDefault()
-        fetch("http://localhost:2248/checkIfRegistered", {
+        fetch("https://athena-desk.vercel.app/checkIfRegistered", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

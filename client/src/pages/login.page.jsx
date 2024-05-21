@@ -12,7 +12,7 @@ function Login () {
     var [password, setPassword] = useState()
     function handleSubmit (e) {
         e.preventDefault()
-        fetch("http://localhost:2248/login/", {
+        fetch("https://athena-desk.vercel.app/login/", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -74,6 +74,3 @@ function Login () {
 }
 
 export default Login
-
-{/* <div className="d-flex align-items-center justify-content-center">
-        < */}

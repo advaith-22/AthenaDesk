@@ -7,7 +7,7 @@ const TicketModel = require("./model/TicketModel");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-const PORT = process.env.PORT;
+const PORT = 2248;
 
 app.use(
   cors({
@@ -16,7 +16,7 @@ app.use(
   }),
 );
 app.use(express.json());
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect("mongodb+srv://adu:adu@athenadesk.ayss8bb.mongodb.net/?retryWrites=true&w=majority&appName=AthenaDesk");
 
 app.get("/", (req, res) => {
   res.send("hello");
@@ -53,7 +53,7 @@ app.get("/users", (req, res) => {
 });
 app.get("/user", async (req, res) => {
   const token = await req.headers["x-access-token"];
-  const decoded = await jwt.verify(token, process.env.JWT_SECRET);
+  const decoded = await jwt.verify(token, "wdIUU730p0M7IB20v7V8BX50jUb5T94465qK8xkAw4N4w00DoPWY8kbPkYqwoZ4wIRheeg5eBBrlRuF60v0XA0sXPPrk662215A9");
   const email = await decoded.email;
   const user = await AthenaModel.findOne({ email: email });
   res.send(user.name);

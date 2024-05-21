@@ -6,18 +6,12 @@ import React from 'react'
 import '../styles/home.page.css'
 
 function Home () {
-    window.onload = function() {
-        if(!window.location.hash) {
-            window.location = window.location + '#loaded';
-            window.location.reload();
-        }
-    }
     const navigate = useNavigate()
     var [data, setData] = useState([])
 
     const getData = () => {
         
-        return fetch(`http://localhost:2248/tickets/`, {
+        return fetch(`https://athena-desk.vercel.app/tickets/`, {
             headers: {
                 'x-access-token': localStorage.getItem("token")
             }
@@ -37,7 +31,23 @@ function Home () {
          }
     }, [])
 
-    console.log(data)
+    function run(){
+        try{
+            data.map(v => {
+                return(<tr>
+                     <td>{v.creator}</td>
+                     <td>{v.subject}</td>
+                     <td>{v.priority}</td>
+                     <td>{v.description}</td>
+                     <td>{v.asignee}</td>
+                 </tr>)
+             })
+        }
+        catch(err){
+            localStorage.removeItem('token')
+            navigate("/login", {replace: true})
+        }
+    }
 
     return(
         <div id="home">
@@ -51,15 +61,7 @@ function Home () {
                 <th>Asignee</th>
             </tr>
             {
-                data.map(v => {
-                   return(<tr>
-                        <td>{v.creator}</td>
-                        <td>{v.subject}</td>
-                        <td>{v.priority}</td>
-                        <td>{v.description}</td>
-                        <td>{v.asignee}</td>
-                    </tr>)
-                })
+                run()
             }
         </Table>
         </div>
