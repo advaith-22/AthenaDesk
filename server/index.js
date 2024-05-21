@@ -11,7 +11,7 @@ const PORT = 2248;
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://athena-desk-z3he.vercel.app",
     credentials: true,
   }),
 );
