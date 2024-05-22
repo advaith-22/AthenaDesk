@@ -11,7 +11,7 @@ function Home () {
 
     const getData = () => {
         
-        return fetch(`https://athena-desk.vercel.app/tickets/`, {
+        return fetch(`/tickets/`, {
             headers: {
                 'x-access-token': localStorage.getItem("token")
             }

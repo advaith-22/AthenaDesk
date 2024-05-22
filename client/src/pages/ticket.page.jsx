@@ -40,14 +40,14 @@ function CreateTicket () {
     }
     const reqbod = {"creator": user, "subject": subject, "priority": priority, "description": description, "asignee": asignee}
     const uploadTicket = () => {
-        axios.post("https://athena-desk.vercel.app/uploadTicket", reqbod).then(() => {
+        axios.post("/uploadTicket", reqbod).then(() => {
             navigate("/")
         })
     }
 
     var [users, setUsers] = useState([])
     const getUsers = () => {
-        return axios.get("https://athena-desk.vercel.app/users/").then((response) => setUsers(response.data))
+        return axios.get("/users/").then((response) => setUsers(response.data))
     }
     useEffect(()=>{
         getUsers()
