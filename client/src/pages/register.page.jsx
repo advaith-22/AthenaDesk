@@ -10,7 +10,7 @@ function Register () {
     const navigate = useNavigate()
 
     function handleSubmit () {
-        fetch("https://athena-desk.vercel.app/register/", {
+        fetch("/register/", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
