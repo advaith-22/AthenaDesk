@@ -5,7 +5,7 @@ const cors = require("cors");
 const AthenaModel = require("./model/AthenaDesk");
 const TicketModel = require("./model/TicketModel");
 const jwt = require("jsonwebtoken");
-require("dotenv").config();
+
 
 const PORT = 2248;
 
@@ -15,6 +15,7 @@ app.use(
     credentials: true,
   }),
 );
+require("dotenv").config();
 app.use(express.json());
 mongoose.connect("mongodb+srv://adu:adu@athenadesk.ayss8bb.mongodb.net/?retryWrites=true&w=majority&appName=AthenaDesk");
 
